@@ -5,18 +5,151 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Challenge - DOM</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        font-family: Raleway, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        background: #5f30e2;
+        padding: 16px;
+        color: white;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .wrapper .container {
+        width: 1024px;
+        border-radius: 8px;
+        margin: 16px;
+        background: #f8f9fa;
+        padding: 16px;
+        flex-grow: 1;
+        height: fit-content;
+      }
+
+      .shadow {
+        box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+          0 15px 40px rgba(166, 173, 201, 0.2);
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .form {
+        display: flex;
+        padding: 16px;
+        flex-direction: column;
+        height: 150px;
+        border-radius: 16px;
+      }
+
+      .form-inline {
+        display: flex;
+        flex-direction: row;
+      }
+
+      input[type="text"] {
+        font-family: Raleway, sans-serif;
+        background: #f5f1ff;
+        border: 2px solid #9475ea;
+        border-radius: 8px;
+        padding: 16px;
+        box-sizing: border-box;
+        margin: 8px 8px 8px 0;
+        font-size: 24px;
+        width: 100%;
+      }
+
+      .btn-submit {
+        width: fit-content;
+        font-family: Raleway, sans-serif;
+        border-radius: 16px;
+        padding: 12px 24px;
+        border: 2px solid #5f30e2;
+        color: black;
+        font-size: 24px;
+        margin-top: auto;
+        margin-bottom: auto;
+        align-self: flex-end;
+        cursor: pointer;
+      }
+
+      .btn-submit:hover {
+        background: #5f30e2;
+        color: white;
+      }
+
+      input[type="text"],
+      .btn-submit:focus {
+        outline: none;
+      }
+
+      .item-list {
+        list-style: none;
+        padding: 0 16px;
+      }
+
+      .item {
+        border-radius: 16px;
+        margin-top: 16px;
+        padding: 12px 24px 12px 24px;
+        background: white;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 900;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- TODO: Buatlah sebuah header dengan id todo-title -->
+      <header>
+        <h1 id="todo-title">Todo List</h1>
+      </header>
       <!-- TODO: Buatlah sebuah subtitle dengan id todo-subtitle -->
+      <div class="wrapper">
+        <div class="container shadow">
+          <h2 class="text-center" id="todo-subtitle">Today I Need To</h2>
+          <!-- Section: input -->
+          <form class="form" id="form" action="#">
+            <div class="form-inline">
+              <!-- TODO: Buatlah sebuah input bertipe text dengan id todo-input -->
+              <input type="text" name="text" id="todo-input" />
+              <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
+              <button type="submit" id="todo-submit" class="btn-submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
 
-      <!-- Section: input -->
-      <!-- TODO: Buatlah sebuah input bertipe text dengan id todo-input -->
-      <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
-
-      <!-- Section output -->
-      <!-- TODO: Buatlah sebuah <ul> dengan id todo-output -->
+        <!-- Section output -->
+        <div class="container">
+          <h2>List</h2>
+          <!-- TODO: Buatlah sebuah <ul> dengan id todo-output -->
+          <ul class="item-list" id="todo-output">
+            <li class="item shadow">test</li>
+            <li class="item shadow">test 1</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <!-- ! Untuk tantangan ini, script jangan diubah ke external js yah ! -->
@@ -33,7 +166,7 @@
 
       // TODO: register event onclick / addEventListener untuk button
       // akan menjalankan fungsi fnClickHandler
-      
+
       // TODO: register event onkeypress / addEventListener untuk input
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
     </script>
